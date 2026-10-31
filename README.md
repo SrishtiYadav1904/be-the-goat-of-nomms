@@ -3,6 +3,8 @@
 > **"CREATE. CUSTOMIZE. NOMM."**  
 > *Created with ♡ by **Tripti D Goat (nomnom)***
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/SrishtiYadav1904/be-the-goat-of-nomms)
+
 Welcome to **BE THE GOAT OF NOMM'S (COOKING)** — a production-ready, anime-inspired interactive cooking adventure! Combining the charm of a cozy Japanese café, a cute interactive sticker book, anime crossovers (One Piece & Naruto), and personalized chef certification.
 
 ---
