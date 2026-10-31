@@ -50,13 +50,13 @@ const BINKS_NOTES = [
 
 export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(() => {
-    return sessionStorage.getItem('nomm_music_playing') === 'true';
+    return localStorage.getItem('nomm_music_playing') === 'true';
   });
   const [isMuted, setIsMuted] = useState<boolean>(() => {
-    return sessionStorage.getItem('nomm_music_muted') === 'true';
+    return localStorage.getItem('nomm_music_muted') === 'true';
   });
   const [volume, setVolumeState] = useState<number>(() => {
-    const saved = sessionStorage.getItem('nomm_music_vol');
+    const saved = localStorage.getItem('nomm_music_vol');
     return saved !== null ? parseFloat(saved) : 0.20; // Default 20%
   });
   const [isSynthesized, setIsSynthesized] = useState<boolean>(false);
@@ -72,12 +72,12 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     isPlayingRef.current = isPlaying;
-    sessionStorage.setItem('nomm_music_playing', isPlaying.toString());
+    localStorage.setItem('nomm_music_playing', isPlaying.toString());
   }, [isPlaying]);
 
   useEffect(() => {
     isMutedRef.current = isMuted;
-    sessionStorage.setItem('nomm_music_muted', isMuted.toString());
+    localStorage.setItem('nomm_music_muted', isMuted.toString());
     if (audioRef.current) {
       audioRef.current.muted = isMuted;
     }
@@ -88,7 +88,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     volumeRef.current = volume;
-    sessionStorage.setItem('nomm_music_vol', volume.toString());
+    localStorage.setItem('nomm_music_vol', volume.toString());
     if (audioRef.current) {
       audioRef.current.volume = volume;
     }
